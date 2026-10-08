@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Padoca Real | Proposta de landing page</title>
+<meta name="description" content="Proposta de layout de landing page para a Padoca Real, Três Lagoas, MS.">
+<script>
+(function(){
+  var t='dark';
+  try{var s=localStorage.getItem('padoca-tema');if(s==='light'||s==='dark'){t=s}}catch(e){}
+  document.documentElement.setAttribute('data-theme',t);
+})();
+</script>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="aviso"><b>Proposta de layout.</b> Conceito de landing page, não é o site oficial da Padoca Real. Campos tracejados são dados provisórios.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo-link" href="#topo" aria-label="Padoca Real, início"><img src="assets/img/logo-padoca-real.jpg" alt="Padoca Real"></a>
+    <ul>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#destaque">Diferenciais</a></li>
+      <li><a href="#momentos">Momentos</a></li>
+      <li><a href="#visite">Visite</a></li>
+    </ul>
+    <div class="acoes">
+      <button class="tema" id="tema" type="button" aria-label="Alternar entre tema claro e escuro">
+        <svg class="i sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13.2A8.5 8.5 0 1 1 10.8 3a6.8 6.8 0 0 0 10.2 10.2Z"/></svg>
+      </button>
+      <a class="btn p sm" href="#encomendas">Encomendar</a>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Padaria &amp; lanchonete · Três Lagoas, MS</span>
+        <h1>Pão quente.<br>Sabor de <em>realeza.</em></h1>
+        <p class="lead">Salgados assados, pães macios e lanches preparados com capricho, para o café da manhã, o lanche e a pausa do dia.</p>
+        <div class="cta">
+          <a class="btn p" href="#produtos">Ver os produtos
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn s" href="#visite">Como chegar</a>
+        </div>
+        <div class="confia">
+          <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Assados todos os dias</span>
+          <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Encomendas para eventos</span>
+        </div>
+      </div>
+      <div class="hero-foto">
+        <div class="moldura"><img src="assets/img/paezinhos-gratinados.jpg" alt="Três pãezinhos gratinados com queijo, em um prato branco"></div>
+        <div class="hero-logo"><img src="assets/img/logo-padoca-real.jpg" alt="Logo da Padoca Real"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faixa" aria-hidden="true">
+    <div class="faixa-trilho">
+      <span>Pão de gergelim</span><i>●</i><span>Pãezinhos gratinados</span><i>●</i><span>Enrolado recheado</span><i>●</i><span>Café fresquinho</span><i>●</i><span>Lanches e salgados</span><i>●</i>
+      <span>Pão de gergelim</span><i>●</i><span>Pãezinhos gratinados</span><i>●</i><span>Enrolado recheado</span><i>●</i><span>Café fresquinho</span><i>●</i><span>Lanches e salgados</span><i>●</i>
+    </div>
+  </div>
+
+  <!-- PRODUTOS -->
+  <section id="produtos">
+    <div class="wrap">
+      <div class="tit rev">
+        <small>Direto do forno</small>
+        <h2>Uma amostra do que sai da cozinha</h2>
+        <p>Nomes, descrições e valores são sugestões para esta proposta e devem ser confirmados com a padaria.</p>
+      </div>
+      <div class="cards">
+        <article class="card rev">
+          <div class="foto"><img loading="lazy" src="assets/img/gergelim-recheado.jpg" alt="Dois pãezinhos com gergelim recheados com presunto, queijo e alface"></div>
+          <div class="corpo">
+            <span class="tag">Lanche</span>
+            <h3>Pão de gergelim recheado</h3>
+            <p>Pão macio e dourado, coberto de gergelim, com presunto, queijo e alface crocante.</p>
+            <div class="preco"><span class="ph">R$ __,__</span></div>
+          </div>
+        </article>
+        <article class="card rev">
+          <div class="foto"><img loading="lazy" src="assets/img/paezinhos-gratinados.jpg" alt="Pãezinhos gratinados com recheios diferentes"></div>
+          <div class="corpo">
+            <span class="tag">Salgado assado</span>
+            <h3>Pãezinhos gratinados</h3>
+            <p>Massa fofinha com recheio generoso e queijo derretido por cima, em vários sabores.</p>
+            <div class="preco"><span class="ph">R$ __,__</span></div>
+          </div>
+        </article>
+        <article class="card rev">
+          <div class="foto"><img loading="lazy" src="assets/img/enrolado-recheado.jpg" alt="Enrolado assado recheado com carne curada sobre uma tábua de madeira"></div>
+          <div class="corpo">
+            <span class="tag">Destaque</span>
+            <h3>Enrolado recheado</h3>
+            <p>Massa assada na hora, casquinha crocante e recheio farto. Ótimo para dividir.</p>
+            <div class="preco"><span class="ph">R$ __,__</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="destaque" id="destaque">
+    <div class="wrap destaque-grid">
+      <div class="rev">
+        <div class="tit" style="margin-bottom:28px">
+          <small>Por que ser Real</small>
+          <h2>Feito para quem gosta de pão bom</h2>
+        </div>
+        <ul>
+          <li><b>1</b><span>Massas assadas todos os dias, para chegarem quentinhas à mesa.</span></li>
+          <li><b>2</b><span>Recheios generosos, do primeiro ao último pedaço.</span></li>
+          <li><b>3</b><span>Atendimento de balcão acolhedor, que trata o cliente como realeza.</span></li>
+          <li><b>4</b><span>Praticidade para o café da manhã, o lanche da tarde e a pausa no trabalho.</span></li>
+        </ul>
+      </div>
+      <div class="grande rev"><img loading="lazy" src="assets/img/enrolado-recheado.jpg" alt="Enrolado recheado em destaque"></div>
+    </div>
+  </section>
+
+  <!-- MOMENTOS -->
+  <section id="momentos">
+    <div class="wrap">
+      <div class="tit rev">
+        <small>Para todo horário</small>
+        <h2>Tem Padoca Real para o seu dia</h2>
+      </div>
+      <div class="momentos">
+        <div class="mom rev">
+          <div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z"/><path d="M16 9h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M7 3v2M10 3v2M13 3v2"/></svg></div>
+          <h3>Café da manhã</h3><p>Pão fresquinho e café quente para começar o dia bem.</p>
+        </div>
+        <div class="mom rev">
+          <div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
+          <h3>Almoço rápido</h3><p>Lanches e salgados para quem tem pouco tempo e muita fome.</p>
+        </div>
+        <div class="mom rev">
+          <div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Lanche da tarde</h3><p>Pãezinhos gratinados com queijo derretido para a pausa.</p>
+        </div>
+        <div class="mom rev">
+          <div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="10" r="2.5"/><path d="M16 20a5 5 0 0 1 6 0"/></svg></div>
+          <h3>Para a família</h3><p>Encomendas para reuniões, aniversários e encontros em casa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENCOMENDAS -->
+  <section class="encomenda" id="encomendas">
+    <div class="wrap">
+      <div class="painel rev">
+        <h2>Vai receber visita? Faça sua encomenda.</h2>
+        <p>Salgados, pães e lanches para festas e eventos. Chame no WhatsApp, informe a quantidade e o dia, e a equipe cuida do restante.</p>
+        <a class="btn band" href="#visite">Pedir pelo WhatsApp
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMAÇÕES -->
+  <section id="visite">
+    <div class="wrap">
+      <div class="tit rev">
+        <small>Venha nos visitar</small>
+        <h2>Estamos esperando você</h2>
+      </div>
+      <div class="info">
+        <div class="box rev">
+          <h3>Horários</h3>
+          <dl>
+            <dt>Seg a sex</dt><dd><span class="ph">__:__ às __:__</span></dd>
+            <dt>Sábado</dt><dd><span class="ph">__:__ às __:__</span></dd>
+            <dt>Domingo</dt><dd><span class="ph">__:__ às __:__</span></dd>
+          </dl>
+        </div>
+        <div class="box rev">
+          <h3>Onde fica</h3>
+          <p>Três Lagoas, Mato Grosso do Sul</p>
+          <p><span class="ph">[inserir endereço completo]</span></p>
+          <p><span class="ph">[inserir link do Google Maps]</span></p>
+        </div>
+        <div class="box rev">
+          <h3>Fale com a gente</h3>
+          <p>WhatsApp: <span class="ph">[inserir número]</span></p>
+          <p>Instagram: <span class="ph">[inserir @]</span></p>
+          <p>Delivery: <span class="ph">[se houver]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap rod">
+    <a class="logo-link" href="#topo" aria-label="Voltar ao topo"><img src="assets/img/logo-padoca-real.jpg" alt="Padoca Real"></a>
+    <p>Três Lagoas · Mato Grosso do Sul</p>
+    <p>Proposta de layout para fins de apresentação. Não é o site oficial nem foi publicado pela Padoca Real. Marca, logo e fotos pertencem aos seus titulares.</p>
+  </div>
+</footer>
+
+<a class="zap" href="#encomendas">Encomendar
+  <svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width:1em;height:1em"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
