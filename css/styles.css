@@ -146,7 +146,8 @@ section{padding:88px 0}
 #produtos .tit small::before,#destaque .tit small::before,#momentos .tit small::before,#visite .tit small::before{display:none}
 #produtos .tit,#visite .tit{max-width:none}
 #visite .tit h2{white-space:nowrap;font-size:clamp(1.15rem,5.6vw,3rem)}
-#produtos .tit h2{font-size:clamp(.95rem,3.5vw,2.5rem);white-space:nowrap}
+#produtos .tit h2{font-size:clamp(1.7rem,7vw,2.5rem)}
+@media(min-width:900px){#produtos .tit h2{font-size:clamp(1.5rem,3.5vw,2.5rem);white-space:nowrap}}
 .tit h2{font-size:clamp(1.9rem,5vw,3rem)}
 .tit p{margin-top:14px;color:var(--muted);font-size:1.02rem}
 #produtos{background:var(--bg)}
@@ -204,7 +205,8 @@ section{padding:88px 0}
 .painel::after{content:"";position:absolute;width:420px;height:420px;right:-120px;bottom:-200px;background:radial-gradient(closest-side,rgba(241,175,62,.2),transparent 70%)}
 .painel h2{font-size:clamp(1.9rem,5.5vw,3.1rem);max-width:18ch;color:#fff;position:relative}
 .painel p{max-width:48ch;color:#F0E1D4;font-weight:600;position:relative}
-.painel .btn{position:relative}
+.painel .btn{position:relative;z-index:1}
+.painel::after,.destaque::before{pointer-events:none}
 
 /* Informações */
 #visite{background:var(--bg-2)}
