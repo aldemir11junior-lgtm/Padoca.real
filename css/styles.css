@@ -104,16 +104,14 @@ header{position:sticky;top:0;z-index:20;background:var(--header);backdrop-filter
 .hero{background:var(--hero);position:relative;overflow:hidden}
 .hero-grid{display:grid;gap:44px;align-items:center;position:relative;z-index:1}
 .hero-txt{max-width:840px}
-/* Celular/tablet: foto em cima, texto embaixo (nunca atrás do texto) */
-.hero{display:flex;flex-direction:column;padding:0 0 56px}
-.hero-bg{position:relative;order:-1;width:100%;height:clamp(220px,58vw,360px);z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%)}
-.hero-grid{margin-top:-8px}
-/* Desktop: mesmo desenho do notebook em qualquer monitor. A foto fica ancorada na coluna do conteúdo (máx. 1120px), não na borda da janela */
+/* Celular/tablet: mesmo desenho do notebook — foto à direita com degradê, texto à esquerda sobrepondo só a parte já esmaecida */
+.hero{display:flex;align-items:center;padding:44px 0 56px}
+.hero-bg{position:absolute;inset:0 0 0 auto;width:58vw;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% center;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.14) 22%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.85) 78%,#000 94%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.14) 22%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.85) 78%,#000 94%)}
+@media(max-width:899px){.hero-txt{max-width:76%}.hero-txt .lead,.eyebrow{text-shadow:0 0 10px rgb(var(--fade)),0 0 4px rgb(var(--fade))}.hero p.lead{font-size:1rem}}/* Desktop: mesmo desenho do notebook em qualquer monitor. A foto fica ancorada na coluna do conteúdo (máx. 1120px), não na borda da janela */
 @media(min-width:900px){
-  .hero{display:flex;flex-direction:row;align-items:center;padding:0 0 64px;min-height:max(560px,calc(100vh - 110px));min-height:max(560px,calc(100svh - 110px))}
-  .hero-grid{margin-top:0}
-  .hero-bg{position:absolute;inset:0 0 0 auto;order:0;height:auto;width:calc(clamp(515px,45vw,1100px) + max(0px,50% - var(--wrap)/2 - 140px))}
+  .hero{padding:0 0 64px;min-height:max(560px,calc(100vh - 110px));min-height:max(560px,calc(100svh - 110px))}
+  .hero-bg{position:absolute;inset:0 0 0 auto;width:calc(clamp(515px,45vw,1100px) + max(0px,50% - var(--wrap)/2 - 140px))}
   .hero-bg img{-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.16) 20%,rgba(0,0,0,.52) 46%,rgba(0,0,0,.9) 74%,#000 92%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.16) 20%,rgba(0,0,0,.52) 46%,rgba(0,0,0,.9) 74%,#000 92%)}
 }
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
