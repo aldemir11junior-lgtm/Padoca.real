@@ -213,9 +213,18 @@
         <div class="box rev">
           <h3>Horários</h3>
           <div class="status" id="status" hidden><span class="dot"></span><span id="status-txt"></span></div>
-          <div class="hor">
-            <div><small>Seg a sáb</small><b>5h30 <em>às</em> 20h</b></div>
-            <div><small>Domingos e feriados</small><b>5h30 <em>às</em> 12h</b></div>
+          <div class="semana" id="semana">
+          <div class="dias" role="group" aria-label="Dias da semana">
+            <button type="button" data-d="1" data-a="330" data-f="1200" data-n="Segunda" aria-label="Segunda">S</button>
+            <button type="button" data-d="2" data-a="330" data-f="1200" data-n="Terça" aria-label="Terça">T</button>
+            <button type="button" data-d="3" data-a="330" data-f="1200" data-n="Quarta" aria-label="Quarta">Q</button>
+            <button type="button" data-d="4" data-a="330" data-f="1200" data-n="Quinta" aria-label="Quinta">Q</button>
+            <button type="button" data-d="5" data-a="330" data-f="1200" data-n="Sexta" aria-label="Sexta">S</button>
+            <button type="button" data-d="6" data-a="330" data-f="1200" data-n="Sábado" aria-label="Sábado">S</button>
+            <button type="button" data-d="0" data-a="330" data-f="720" data-n="Domingo e feriados" aria-label="Domingo e feriados">D</button>
+          </div>
+          <p class="legenda"><b id="sel-dia"></b><span id="sel-hr"></span></p>
+          <div class="barra"><i class="jan"></i><i class="agora"></i></div>
           </div>
         </div>
         <div class="box rev">
@@ -252,7 +261,7 @@
   <div class="wrap rod">
     <a class="logo-link" href="#topo" aria-label="Voltar ao topo"><img src="assets/img/logo-padoca-real.jpg" alt="Padoca Real"></a>
     <p>Três Lagoas · Mato Grosso do Sul</p>
-    <p>© 2026 Padoca Real · padocareal.com.br · Todos os direitos reservados.</p>
+    <p>© 2026 Padoca Real · Todos os direitos reservados.</p>
   </div>
 </footer>
 

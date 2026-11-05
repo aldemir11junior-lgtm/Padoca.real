@@ -146,7 +146,8 @@ section{padding:88px 0}
 .tit small{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .tit small::before{content:"";width:28px;height:2px;background:var(--accent);border-radius:2px}
 #produtos .tit small::before,#destaque .tit small::before,#momentos .tit small::before,#visite .tit small::before{display:none}
-#produtos .tit{max-width:none}
+#produtos .tit,#visite .tit{max-width:none}
+#visite .tit h2{white-space:nowrap;font-size:clamp(1.15rem,5.6vw,3rem)}
 #produtos .tit h2{font-size:clamp(.95rem,3.5vw,2.5rem);white-space:nowrap}
 .tit h2{font-size:clamp(1.9rem,5vw,3rem)}
 .tit p{margin-top:14px;color:var(--muted);font-size:1.02rem}
@@ -240,6 +241,23 @@ section{padding:88px 0}
 .status[hidden]{display:none}
 .status .dot{width:8px;height:8px;border-radius:50%;background:#2FA866;box-shadow:0 0 0 3px rgba(47,168,102,.2)}
 .status.fechado .dot{background:#D6453D;box-shadow:0 0 0 3px rgba(214,69,61,.2)}
+/* Horários por dia (linha do tempo 4h–22h) */
+.semana{display:grid;gap:10px}
+.dias{display:flex;justify-content:space-between;gap:6px}
+.dias button{flex:1;max-width:44px;aspect-ratio:1;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);font:800 .85rem 'Nunito',sans-serif;cursor:pointer;transition:background .2s,color .2s}
+.dias button:hover{background:var(--btn-s-hover)}
+.dias button.hoje{border-color:var(--accent);color:var(--text)}
+.dias button.sel{background:var(--text);color:var(--bg);border-color:var(--text)}
+.dias button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legenda{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;margin:0!important;color:var(--text)!important}
+.legenda span{font-weight:700;color:var(--muted)}
+.barra{position:relative;height:8px;border-radius:99px;background:var(--bg-2);border:1px solid var(--line);margin-bottom:2px}
+.jan{position:absolute;top:-1px;bottom:-1px;left:calc(var(--a)*1%);width:calc((var(--f) - var(--a))*1%);border-radius:99px;background:rgba(128,128,128,.35)}
+.agora{display:none;position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--accent);border:2px solid var(--surface);box-shadow:0 0 0 3px rgba(201,130,0,.25)}
+.semana.eh-hoje .agora{display:block}
+.semana.eh-hoje .jan{background:linear-gradient(90deg,#2FA866 var(--p,0%),rgba(47,168,102,.28) var(--p,0%))}
+.semana.eh-hoje.perto .jan{background:linear-gradient(90deg,#E08A00 var(--p,0%),rgba(224,138,0,.28) var(--p,0%))}
+.semana.eh-hoje.fechado .jan{background:rgba(214,69,61,.28)}
 .hor{display:grid;grid-template-columns:1fr 1fr;align-items:end}
 .hor>div+div{border-left:1px solid var(--line);padding-left:18px}
 .hor small{display:block;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;line-height:1.35}

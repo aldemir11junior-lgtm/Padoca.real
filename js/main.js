@@ -31,7 +31,19 @@
         st.classList.toggle('fechado',!aberto);
         stTxt.textContent=aberto?'Aberto agora · fecha às '+(dom?'12h':'20h'):'Fechado agora · abre às 5h30';
         st.hidden=false;
-      }catch(e){st.hidden=true}
+        var dias={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d=dias[o.weekday],I=240,T=1080;
+        var sem=document.getElementById('semana'),bt=[].slice.call(sem.querySelectorAll('button')),bar=sem.querySelector('.barra');
+        if(sem.dataset.sel===undefined)sem.dataset.sel=d;
+        var sd=+sem.dataset.sel,b=bt.filter(function(x){return +x.dataset.d===sd})[0],a=+b.dataset.a,f=+b.dataset.f;
+        bt.forEach(function(x){x.classList.toggle('hoje',+x.dataset.d===d);x.classList.toggle('sel',x===b);x.setAttribute('aria-pressed',x===b)});
+        bar.style.setProperty('--a',0);bar.style.setProperty('--f',100);
+        var hj=sd===d,ab=m>=a&&m<f,falta=f-m;
+        sem.classList.toggle('eh-hoje',hj);sem.classList.toggle('fechado',!ab);sem.classList.toggle('perto',ab&&falta<=60);
+        bar.querySelector('.agora').style.left=Math.max(0,Math.min(100,(m-a)/(f-a)*100))+'%';
+        bar.querySelector('.jan').style.setProperty('--p',(ab?(m-a)/(f-a)*100:0)+'%');
+        document.getElementById('sel-dia').textContent=(hj?'Hoje · ':'')+b.dataset.n;
+        document.getElementById('sel-hr').textContent=(hj&&ab&&falta<=60?'Fecha em '+falta+' min · ':'')+'5h30 às '+(f===720?'12h':'20h');
+        if(!sem.dataset.ok){sem.dataset.ok=1;bt.forEach(function(x){x.addEventListener('click',function(){sem.dataset.sel=x.dataset.d;agora()})})}      }catch(e){st.hidden=true}
     };
     agora();setInterval(agora,60000);
   }
