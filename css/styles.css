@@ -187,6 +187,19 @@ section{padding:88px 0}
 .destaque li b{flex:none;width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.35);display:grid;place-items:center;font-size:.9rem;color:#fff;background:rgba(255,255,255,.08)}
 .destaque .grande{width:min(400px,100%);justify-self:center;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 60px -24px rgba(0,0,0,.7)}
 .destaque .grande img{width:100%;aspect-ratio:4/4.3;object-fit:cover}
+.destaque .slides{display:flex;transition:transform .8s ease}
+.destaque .slides.sem-anim{transition:none}
+.destaque .slides img{flex:0 0 100%;min-width:0}
+.destaque .grande.chacoalha{animation:chacoalha .6s ease-in-out}
+@keyframes chacoalha{
+  0%,100%{transform:translateX(0) rotate(0)}
+  15%{transform:translateX(-6px) rotate(-1.2deg)}
+  30%{transform:translateX(6px) rotate(1.2deg)}
+  45%{transform:translateX(-5px) rotate(-1deg)}
+  60%{transform:translateX(5px) rotate(1deg)}
+  80%{transform:translateX(-2px) rotate(-.4deg)}
+}
+@media(prefers-reduced-motion:reduce){.destaque .slides{transition:none}.destaque .grande.chacoalha{animation:none}}
 
 /* Momentos */
 #momentos{background:var(--bg-2)}

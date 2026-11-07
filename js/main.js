@@ -20,6 +20,26 @@
     window.addEventListener('resize',atualiza);
     atualiza();
   }
+  var sl=document.getElementById('slides');
+  if(sl){
+    var total=sl.children.length-1,pos=0;
+    var vai=function(){
+      pos++;
+      sl.style.transform='translateX(-'+pos*100+'%)';
+      if(pos===total){
+        setTimeout(function(){
+          sl.classList.add('sem-anim');pos=0;sl.style.transform='translateX(0)';
+          void sl.offsetWidth;sl.classList.remove('sem-anim');
+        },900);
+      }
+    };
+    var caixa=sl.parentNode;
+    var ciclo=function(){
+      setTimeout(function(){caixa.classList.add('chacoalha')},4400);
+      setTimeout(function(){caixa.classList.remove('chacoalha');vai();ciclo()},5000);
+    };
+    ciclo();
+  }
   var st=document.getElementById('status'),stTxt=document.getElementById('status-txt');
   if(st&&stTxt){
     var agora=function(){
