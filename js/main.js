@@ -5,21 +5,41 @@
     root.setAttribute('data-theme',n);
     try{localStorage.setItem('padoca-tema',n)}catch(e){}
   });
-  var trilho=document.getElementById('cards');
-  if(trilho){
-    var ant=document.querySelector('.seta.ant'),prox=document.querySelector('.seta.prox');
+  [].slice.call(document.querySelectorAll('.carrossel')).forEach(function(box){
+    var trilho=box.querySelector('.cards'),ant=box.querySelector('.seta.ant'),prox=box.querySelector('.seta.prox');
+    if(!trilho||!ant||!prox)return;
     var atualiza=function(){
       var max=trilho.scrollWidth-trilho.clientWidth-2;
       ant.disabled=trilho.scrollLeft<=2;
       prox.disabled=trilho.scrollLeft>=max;
     };
-    var passo=function(){var c=trilho.querySelector('.card');return c?c.getBoundingClientRect().width+18:240};
+    var passo=function(){var c=trilho.firstElementChild;return c?c.getBoundingClientRect().width+18:240};
     ant.addEventListener('click',function(){trilho.scrollBy({left:-passo()*2,behavior:'smooth'})});
     prox.addEventListener('click',function(){trilho.scrollBy({left:passo()*2,behavior:'smooth'})});
     trilho.addEventListener('scroll',atualiza,{passive:true});
     window.addEventListener('resize',atualiza);
     atualiza();
-  }
+  });
+  var avs=[].slice.call(document.querySelectorAll('.av-card'));
+  var mede=function(){
+    avs.forEach(function(c){
+      var t=c.querySelector('.av-txt'),b=c.querySelector('.ver-mais');
+      if(!t||!b)return;
+      b.hidden=c.classList.contains('aberto')?false:!(t.scrollHeight>t.clientHeight+1);
+    });
+  };
+  avs.forEach(function(c){
+    var b=c.querySelector('.ver-mais');
+    if(!b)return;
+    b.addEventListener('click',function(){
+      var a=c.classList.toggle('aberto');
+      b.textContent=a?'Ver menos':'Ver mais';
+      b.setAttribute('aria-expanded',a?'true':'false');
+    });
+  });
+  mede();
+  window.addEventListener('resize',mede);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(mede);
   var sl=document.getElementById('slides');
   if(sl){
     var total=sl.children.length-1,pos=0;
@@ -68,7 +88,7 @@
     agora();setInterval(agora,60000);
   }
   var links=[].slice.call(document.querySelectorAll('.nav ul a'));
-  var secoes=['produtos','destaque','momentos','encomendas','avaliacoes','visite'].map(function(id){return document.getElementById(id)}).filter(Boolean);
+  var secoes=['produtos','destaque','momentos','encomendas','recomendacoes','visite'].map(function(id){return document.getElementById(id)}).filter(Boolean);
   var marca=function(){
     var h=document.querySelector('header').offsetHeight+60,atual='topo';
     secoes.forEach(function(s){if(s.getBoundingClientRect().top<=h)atual=s.id});
