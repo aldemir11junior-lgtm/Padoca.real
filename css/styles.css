@@ -293,6 +293,9 @@ footer{background:#0E0503;color:#DCC9BB;padding:24px 0 20px}
 .rod{display:grid;gap:8px;justify-items:center;text-align:center}
 .rod .logo-link img{height:44px}
 footer p{font-size:.8rem;max-width:62ch;opacity:.88}
+footer .credito{font-size:.72rem;opacity:.75}
+footer .credito a{color:inherit;text-decoration:none}
+footer .credito a:hover{opacity:1;color:#fff}
 
 /* Botão flutuante */
 .zap{position:fixed;right:16px;bottom:16px;z-index:30;display:block;line-height:0;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35));transition:transform .15s,filter .2s}

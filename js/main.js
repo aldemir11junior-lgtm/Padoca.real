@@ -29,7 +29,7 @@
         var m=(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10),dom=o.weekday==='Sun';
         var abre=330,fecha=dom?720:1200,aberto=m>=abre&&m<fecha;
         st.classList.toggle('fechado',!aberto);
-        stTxt.textContent=aberto?'Aberto agora · fecha às '+(dom?'12h':'20h'):'Fechado agora · abre às 5h30';
+        stTxt.textContent=aberto?'Aberto agora · fecha às '+(dom?'12:00':'20:00'):'Fechado agora · abre às 5:30';
         st.hidden=false;
         var dias={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d=dias[o.weekday],I=240,T=1080;
         var sem=document.getElementById('semana'),bt=[].slice.call(sem.querySelectorAll('button')),bar=sem.querySelector('.barra');
@@ -42,7 +42,7 @@
         bar.querySelector('.agora').style.left=Math.max(0,Math.min(100,(m-a)/(f-a)*100))+'%';
         bar.querySelector('.jan').style.setProperty('--p',(ab?(m-a)/(f-a)*100:0)+'%');
         document.getElementById('sel-dia').textContent=(hj?'Hoje · ':'')+b.dataset.n;
-        document.getElementById('sel-hr').textContent=(hj&&ab&&falta<=60?'Fecha em '+falta+' min · ':'')+'5h30 às '+(f===720?'12h':'20h');
+        document.getElementById('sel-hr').textContent=(hj&&ab&&falta<=60?'Fecha em '+falta+' min · ':'')+'5:30 às '+(f===720?'12:00':'20:00');
         if(!sem.dataset.ok){sem.dataset.ok=1;bt.forEach(function(x){x.addEventListener('click',function(){sem.dataset.sel=x.dataset.d;agora()})})}      }catch(e){st.hidden=true}
     };
     agora();setInterval(agora,60000);
