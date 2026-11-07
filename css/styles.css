@@ -147,9 +147,9 @@ section{padding:88px 0}
 #produtos .tit,#visite .tit{max-width:none}
 #visite .tit h2{white-space:nowrap;font-size:clamp(1.15rem,5.6vw,3rem)}
 #momentos .tit{max-width:none}
-#momentos .tit h2{white-space:nowrap;font-size:clamp(1rem,4.8vw,3rem)}
-#produtos .tit h2{font-size:clamp(1.7rem,7vw,2.5rem)}
-@media(min-width:900px){#produtos .tit h2{font-size:clamp(1.5rem,3.5vw,2.5rem);white-space:nowrap}}
+/* Títulos de Produtos e Momentos: mesmo tamanho em todas as telas */
+#produtos .tit h2,#momentos .tit h2{font-size:clamp(1.7rem,7vw,2.5rem)}
+@media(min-width:900px){#produtos .tit h2,#momentos .tit h2{font-size:clamp(1.5rem,3.5vw,2.5rem);white-space:nowrap}}
 .tit h2{font-size:clamp(1.9rem,5vw,3rem)}
 /* Tema escuro: títulos das seções em bege #F1D8B7 */
 :root[data-theme="dark"] #produtos .tit h2,:root[data-theme="dark"] #momentos .tit h2,:root[data-theme="dark"] #recomendacoes .mural-intro h2,:root[data-theme="dark"] #visite .tit h2{color:#F1D8B7}
