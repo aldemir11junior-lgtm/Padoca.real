@@ -146,6 +146,8 @@ section{padding:88px 0}
 #produtos .tit small::before,#destaque .tit small::before,#momentos .tit small::before,#visite .tit small::before{display:none}
 #produtos .tit,#visite .tit{max-width:none}
 #visite .tit h2{white-space:nowrap;font-size:clamp(1.15rem,5.6vw,3rem)}
+#momentos .tit{max-width:none}
+#momentos .tit h2{white-space:nowrap;font-size:clamp(1rem,4.8vw,3rem)}
 #produtos .tit h2{font-size:clamp(1.7rem,7vw,2.5rem)}
 @media(min-width:900px){#produtos .tit h2{font-size:clamp(1.5rem,3.5vw,2.5rem);white-space:nowrap}}
 .tit h2{font-size:clamp(1.9rem,5vw,3rem)}
