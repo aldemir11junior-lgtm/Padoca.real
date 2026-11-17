@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://padocareal.com.br/sitemap.xml
+Sitemap: https://www.padocareal.com.br/sitemap.xml
